@@ -1,0 +1,17 @@
+{
+  "name": "namorvtech-testgame",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "build.bat",
+    "local": "build-local.bat",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "namorvtech": "2.0.2",
+    "typescript": "^3.3.3"
+  }
+}
