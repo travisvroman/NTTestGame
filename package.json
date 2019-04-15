@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "build.bat",
-    "local": "build-local.bat",
+    "build": "node build.js",
+    "local": "node build-local.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "child-process": "^1.0.2",
+    "fs-extra": "^7.0.1",
     "namorvtech": "2.0.2",
     "typescript": "^3.3.3"
   }
