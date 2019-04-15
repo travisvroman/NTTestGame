@@ -1,7 +1,7 @@
 {
     "materials": [
         {
-            "name": "bg",
+            "name": "container",
             "diffuse": "assets/textures/container.png",
             "specular": "assets/textures/container_spec.png"
         }

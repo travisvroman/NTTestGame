@@ -17,11 +17,11 @@ function copyFileSync(source, target) {
     fs.writeFileSync(targetFile, fs.readFileSync(source));
 }
 
-function copyFolderRecursiveSync(source, target) {
+function copyFolderRecursiveSync(source, target, createFolder) {
     var files = [];
 
     // Check if folder needs to be created or integrated
-    var targetFolder = target;//path.join(target, path.basename(source));
+    var targetFolder = createFolder ? path.join(target, path.basename(source)) : target;
     if (!fs.existsSync(targetFolder)) {
         fs.mkdirSync(targetFolder);
     }
@@ -32,7 +32,7 @@ function copyFolderRecursiveSync(source, target) {
         files.forEach(function (file) {
             var curSource = path.join(source, file);
             if (fs.lstatSync(curSource).isDirectory()) {
-                copyFolderRecursiveSync(curSource, targetFolder);
+                copyFolderRecursiveSync(curSource, targetFolder, true);
             } else {
                 copyFileSync(curSource, targetFolder);
             }
@@ -49,12 +49,12 @@ cp.execSync("node node_modules/typescript/bin/tsc");
 
 console.log("Copying dependencies...");
 // Note: Pull from folder on local disk instead of package.
-copyFolderRecursiveSync("../namorvtech/dist/", "dist");
+copyFolderRecursiveSync("../namorvtech/dist/", "dist", false);
 
 console.log("Copying www...");
-copyFolderRecursiveSync("www/", "dist");
+copyFolderRecursiveSync("www/", "dist", false);
 
 console.log("Copying assets...");
-copyFolderRecursiveSync("assets/", "dist/assets");
+copyFolderRecursiveSync("assets/", "dist/assets", false);
 
 console.log("\x1b[35m***BUILD LOCAL COMPLETE***\x1b[0m");
