@@ -13,7 +13,7 @@
   "devDependencies": {
     "child-process": "^1.0.2",
     "fs-extra": "^7.0.1",
-    "namorvtech": "2.0.2",
+    "namorvtech": "2.1.1",
     "typescript": "^3.3.3"
   }
 }
