@@ -2,7 +2,7 @@
 // the first reference and uncomment the second.
 
 ///// <reference path="../node_modules/namorvtech/dist/NTMain.d.ts" />
-/// <reference path="../../namorvtech/dist/NTMain.d.ts" />
+/// <reference path="../../NamorvTech/dist/NTMain.d.ts" />
 
 var test = "";
 

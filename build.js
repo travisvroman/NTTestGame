@@ -45,10 +45,18 @@ console.log("Cleaning...");
 fsExtra.emptyDirSync("dist");
 
 console.log("Building...");
-cp.execSync("node node_modules/typescript/bin/tsc");
+try {
+    cp.execSync("node node_modules/typescript/bin/tsc", {
+        stdio: "inherit"
+    });
+    console.log("\x1b[35m***BUILD COMPLETE***\x1b[0m");
+} catch (ex) {
+    console.log(ex.stdout);
+    console.log("\x1b[35m***BUILD FAILED***\x1b[0m");
+}
 
 console.log("Copying dependencies...");
-copyFolderRecursiveSync("node_modules/namorvtech/dist/", "dist");
+copyFolderRecursiveSync("node_modules/NamorvTech/dist/", "dist");
 
 console.log("Copying www...");
 copyFolderRecursiveSync("www/", "dist");
