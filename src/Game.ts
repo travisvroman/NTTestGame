@@ -9,7 +9,7 @@ namespace TestGame {
          * Called before the main update loop, after updateReady has been called on the engine subsystems. 
          * Used for loading the first/initial level, etc.
          */
-        public updateReady(): void {
+        public UpdateReady(): void {
 
             // Load the test level. This should be configurable.
             NT.LevelManager.changeLevel( "test 1" );
@@ -19,7 +19,7 @@ namespace TestGame {
          * Performs update procedures on this game. Called after all engine subsystems have updated.
          * @param time The delta time in milliseconds since the last update.
          */
-        public update( time: number ): void {
+        public Update( time: number ): void {
 
         }
 
@@ -27,7 +27,7 @@ namespace TestGame {
          * Renders this game. Called after all engine subsystems have rendered.
          * @param shader The shader to be used during this render.
          */
-        public render( shader: NT.Shader ): void {
+        public Render(): void {
 
         }
 
