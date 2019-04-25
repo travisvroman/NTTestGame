@@ -25,12 +25,11 @@ namespace TestGame {
 
         /**
          * Renders this game. Called after all engine subsystems have rendered.
-         * @param shader The shader to be used during this render.
+         * @param time The delta time in milliseconds since the last frame.
+         * @param renderView The view of information used for this render pass.
          */
-        public Render(): void {
+        public Render( time: number, renderView: NT.RenderView ): void {
 
         }
-
-
     }
 }
